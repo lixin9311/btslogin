@@ -38,10 +38,13 @@ export class LoginComponent implements OnInit {
   }
 
   getUrlParam(key: string): string {
-      return decodeURIComponent(window.location.search.substring(1)).split('&')
+      const temp = decodeURIComponent(window.location.search.substring(1)).split('&')
        .map((v) => v.split('='))
-       .filter((v) => (v[0] === key) ? true : false )
-       .reduce((prev, curv, index, array) => curv[1], undefined);
+       .filter((v) => (v[0] === key) ? true : false );
+      if (temp.length < 1) {
+        return '';
+      }
+      return temp[0][1];
   }
 
   getChallenge() {
