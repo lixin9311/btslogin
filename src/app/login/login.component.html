@@ -9,7 +9,6 @@
             </div>
             <form class="example-form" (submit)="login()">
               <table class="full-width" cellspacing="0">
-
                 <tr>
                   <td>
                     <mat-form-field class="full-width">
@@ -23,6 +22,13 @@
                     <mat-form-field class="full-width">
                       <input class="input-box" matInput placeholder="Password" [(ngModel)]="password" type="password"
                         name="password" required>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field class="full-width">
+                      <input class="input-box" matInput placeholder="Challenge API" [(ngModel)]="challengeUrl" name="challengeurl" required>
                     </mat-form-field>
                   </td>
                 </tr>
