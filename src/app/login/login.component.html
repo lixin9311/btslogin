@@ -1,0 +1,56 @@
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+      <mat-card class="example-card text-center">
+        <div *ngIf="!loged">
+          <mat-card-content>
+            <div class="input-box">
+              <p>Sign In</p>
+            </div>
+            <form class="example-form" (submit)="login()">
+              <table class="full-width" cellspacing="0">
+
+                <tr>
+                  <td>
+                    <mat-form-field class="full-width">
+                      <input class="input-box" matInput placeholder="Username" [(ngModel)]="username" name="username"
+                        required>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field class="full-width">
+                      <input class="input-box" matInput placeholder="Password" [(ngModel)]="password" type="password"
+                        name="password" required>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field class="full-width">
+                      <input class="input-box" matInput placeholder="Message" [(ngModel)]="message" name="message">
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field class="full-width">
+                      <input class="input-box" matInput placeholder="Token" [(ngModel)]="token" name="token">
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+              <button type="submit" style="display:none">hidden submit</button>
+            </form>
+            <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button (click)="login()" color="primary">Login</button>
+          </mat-card-actions>
+        </div>
+        <div *ngIf="loged">Already loged in.</div>
+      </mat-card>
+    </div>
+  </div>
+</div>

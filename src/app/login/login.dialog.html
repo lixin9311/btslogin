@@ -1,0 +1,13 @@
+<div class="dialog-container">
+<h1 mat-dialog-title>Hi {{data.username}}</h1>
+<div mat-dialog-content>
+  <p>Login success, this is your token</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.token">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.token" cdkFocusInitial>Ok</button>
+</div>
+</div>
